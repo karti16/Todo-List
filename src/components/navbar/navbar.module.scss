@@ -1,0 +1,22 @@
+.header {
+  background-color: hsl(220, 13%, 91%);
+  padding: 16px;
+  padding-left: 48px;
+}
+
+.header ul {
+  display: flex;
+  flex-direction: row;
+  gap: 12px;
+  align-items: center;
+}
+
+.menuIcon {
+  font-size: 24px;
+  color: rgb(51 65 85);
+}
+
+.homeIcon {
+  font-size: 24px;
+  color: rgb(51 65 85);
+}

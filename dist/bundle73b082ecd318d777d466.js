@@ -1,24 +1,13 @@
 /******/ (() => { // webpackBootstrap
-/******/ 	"use strict";
 /******/ 	var __webpack_modules__ = ({
 
 /***/ "./src/app.jsx":
 /*!*********************!*\
   !*** ./src/app.jsx ***!
   \*********************/
-/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+/***/ (() => {
 
-__webpack_require__.r(__webpack_exports__);
-/* harmony export */ __webpack_require__.d(__webpack_exports__, {
-/* harmony export */   "default": () => (/* binding */ App)
-/* harmony export */ });
-/* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
-
-function App() {
-  return /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_0__.jsx)("div", {
-    children: "APP"
-  });
-}
+throw new Error("Module build failed (from ./node_modules/babel-loader/lib/index.js):\nSyntaxError: /home/karti/nfs_share/Odin/Todo-List/src/app.jsx: Identifier 'MainContent' has already been declared. (2:9)\n\n\u001b[0m \u001b[90m 1 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mMainContent\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'./components/maincontent/mainContent'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 2 |\u001b[39m \u001b[36mimport\u001b[39m { \u001b[33mMainContent\u001b[39m } \u001b[36mfrom\u001b[39m \u001b[32m'./components/maincontent/maincomponent.styled'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m   |\u001b[39m          \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 3 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mNavbar\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'./components/navbar/navbar'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 4 |\u001b[39m \u001b[36mimport\u001b[39m \u001b[33mSidebar\u001b[39m \u001b[36mfrom\u001b[39m \u001b[32m'./components/sidebar/sidebar'\u001b[39m\u001b[33m;\u001b[39m\u001b[0m\n\u001b[0m \u001b[90m 5 |\u001b[39m\u001b[0m\n    at instantiate (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:72:32)\n    at constructor (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:358:12)\n    at Object.raise (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:3335:19)\n    at ScopeHandler.checkRedeclarationInScope (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:3519:19)\n    at ScopeHandler.declareName (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:3485:12)\n    at Object.declareNameFromIdentifier (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:12058:16)\n    at Object.checkIdentifier (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:12053:12)\n    at Object.checkLVal (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:11979:12)\n    at Object.finishImportSpecifier (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:16191:10)\n    at Object.parseImportSpecifier (/home/karti/nfs_share/Odin/Todo-List/node_modules/@babel/parser/lib/index.js:16372:17)");
 
 /***/ }),
 
@@ -28,6 +17,7 @@ function App() {
   \*****************************/
 /***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
 
+"use strict";
 __webpack_require__.r(__webpack_exports__);
 // extracted by mini-css-extract-plugin
 
@@ -40,6 +30,7 @@ __webpack_require__.r(__webpack_exports__);
   \*************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 /**
  * @license React
  * react-dom.development.js
@@ -29815,6 +29806,7 @@ if (
   \******************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 
 
 var m = __webpack_require__(/*! react-dom */ "./node_modules/react-dom/index.js");
@@ -29847,6 +29839,7 @@ if (false) {} else {
   \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 function checkDCE() {
@@ -29890,6 +29883,7 @@ if (false) {} else {
   \*****************************************************************/
 /***/ ((__unused_webpack_module, exports, __webpack_require__) => {
 
+"use strict";
 /**
  * @license React
  * react-jsx-runtime.development.js
@@ -31212,6 +31206,7 @@ exports.jsxs = jsxs;
   \*****************************************************/
 /***/ ((module, exports, __webpack_require__) => {
 
+"use strict";
 /* module decorator */ module = __webpack_require__.nmd(module);
 /**
  * @license React
@@ -33960,6 +33955,7 @@ if (
   \*************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 if (false) {} else {
@@ -33975,6 +33971,7 @@ if (false) {} else {
   \*******************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 if (false) {} else {
@@ -33990,6 +33987,7 @@ if (false) {} else {
   \*************************************************************/
 /***/ ((__unused_webpack_module, exports) => {
 
+"use strict";
 /**
  * @license React
  * scheduler.development.js
@@ -34634,6 +34632,7 @@ if (
   \*****************************************/
 /***/ ((module, __unused_webpack_exports, __webpack_require__) => {
 
+"use strict";
 
 
 if (false) {} else {
@@ -34673,6 +34672,18 @@ if (false) {} else {
 /******/ 	}
 /******/ 	
 /************************************************************************/
+/******/ 	/* webpack/runtime/compat get default export */
+/******/ 	(() => {
+/******/ 		// getDefaultExport function for compatibility with non-harmony modules
+/******/ 		__webpack_require__.n = (module) => {
+/******/ 			var getter = module && module.__esModule ?
+/******/ 				() => (module['default']) :
+/******/ 				() => (module);
+/******/ 			__webpack_require__.d(getter, { a: getter });
+/******/ 			return getter;
+/******/ 		};
+/******/ 	})();
+/******/ 	
 /******/ 	/* webpack/runtime/define property getters */
 /******/ 	(() => {
 /******/ 		// define getter functions for harmony exports
@@ -34712,15 +34723,17 @@ if (false) {} else {
 /******/ 	
 /************************************************************************/
 var __webpack_exports__ = {};
-// This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
+// This entry need to be wrapped in an IIFE because it need to be in strict mode.
 (() => {
+"use strict";
 /*!***********************!*\
   !*** ./src/index.jsx ***!
   \***********************/
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom_client__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react-dom/client */ "./node_modules/react-dom/client.js");
-/* harmony import */ var _app_jsx__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./app.jsx */ "./src/app.jsx");
-/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./styles/main.css */ "./src/styles/main.css");
+/* harmony import */ var _styles_main_css__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./styles/main.css */ "./src/styles/main.css");
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./app */ "./src/app.jsx");
+/* harmony import */ var _app__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_app__WEBPACK_IMPORTED_MODULE_2__);
 /* harmony import */ var react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! react/jsx-runtime */ "./node_modules/react/jsx-runtime.js");
 
 
@@ -34728,9 +34741,9 @@ __webpack_require__.r(__webpack_exports__);
 
 var container = document.getElementById('root');
 var root = (0,react_dom_client__WEBPACK_IMPORTED_MODULE_0__.createRoot)(container);
-root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)(_app_jsx__WEBPACK_IMPORTED_MODULE_1__["default"], {}));
+root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)((_app__WEBPACK_IMPORTED_MODULE_2___default()), {}));
 })();
 
 /******/ })()
 ;
-//# sourceMappingURL=bundleb8a4c7c2361d5a234497.js.map
+//# sourceMappingURL=bundle73b082ecd318d777d466.js.map

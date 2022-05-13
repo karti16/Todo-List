@@ -1,0 +1,33 @@
+.s {
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  border-radius: 6px;
+  background-color: hsla(224, 34%, 85%, 0.941);
+
+  input {
+    background-color: transparent;
+
+    &::placeholder {
+      color: hsla(240, 2%, 16%, 0.418);
+    }
+
+    width: 220px;
+    outline: none;
+    transition: width 300ms ease-in-out;
+
+    &:focus {
+      width: 350px;
+      transition: width 300ms ease-in-out;
+    }
+  }
+}
+
+.d {
+  background-color: red;
+}
+
+.searchIcon {
+  padding: 8px;
+}

@@ -2,6 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // const BundleAnalyzerPlugin =
 //   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -32,7 +33,7 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.ts', '.js', '.jsx', '.mjs', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
   },
   module: {
     rules: [
@@ -59,14 +60,17 @@ module.exports = {
         exclude: /node_modules/,
         use: {
           loader: 'babel-loader',
-          options: {
-            presets: [
-              '@babel/preset-env',
-              ['@babel/preset-react', { runtime: 'automatic' }],
-            ],
-          },
         },
       },
+      // {
+      //   test: /\.(ts|tsx)$/,
+      //   exclude: /node_modules/,
+      //   use: [
+      //     {
+      //       loader: 'babel-loader',
+      //     },
+      //   ],
+      // },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
@@ -80,12 +84,16 @@ module.exports = {
       template: './src/template.html',
     }),
     new MiniCssExtractPlugin(),
+    // new CleanWebpackPlugin({
+    //   cleanStaleWebpackAssets: true,
+    // }),
     new CopyPlugin({
       patterns: [
         {
           from: path.resolve(__dirname, 'src/assets/img'),
           to: 'img',
           noErrorOnMissing: true,
+          force: true,
         },
       ],
     }),
