@@ -1,11 +1,11 @@
 import styles from './sidebar.module.scss';
-import { toggleSidebar } from '../../store/uiStore';
+import { useStore } from '../../store/uiStore';
 import sidebarList from './sidebarList';
 import { FiMenu, FiHome } from 'react-icons/fi';
 import { useState, useEffect } from 'react';
 
 function Sidebar() {
-  const toggle = toggleSidebar((state) => state.toggle);
+  const toggle = useStore((state) => state.toggle);
 
   return (
     <div className={`${styles.sidebar} ${toggle ? styles.open : ''}`}>

@@ -11,12 +11,17 @@
   align-items: center;
 }
 
-.menuIcon {
+.navicons {
   font-size: 24px;
   color: rgb(51 65 85);
+  cursor: pointer;
 }
 
-.homeIcon {
-  font-size: 24px;
-  color: rgb(51 65 85);
+.rightContent {
+  margin-left: auto;
+}
+
+.addtask {
+  background-color: red;
+  color: red;
 }
