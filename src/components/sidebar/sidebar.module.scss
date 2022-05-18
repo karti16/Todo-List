@@ -3,7 +3,8 @@ $animation-duration: 200ms;
 .sidebar {
   width: 0px;
   background-color: hsla(0, 0%, 76%, 0.774);
-  height: calc(100vh - 56px);
+  min-height: calc(100vh - 56px);
+  max-height: 100;
   transition: width $animation-duration ease-in-out;
 }
 

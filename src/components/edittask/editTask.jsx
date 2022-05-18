@@ -1,23 +1,31 @@
 import { useState, useRef, useEffect } from 'react';
 import styles from './editTask.module.scss';
 import { useStore } from '../../store/uiStore';
-import { v4 as uuidv4 } from 'uuid';
 import Datepicker from '../datepicker/datePicker';
 
-const EditTask = ({ task, des, date, hide }) => {
+const EditTask = ({ closeEdit, id }) => {
+  if (id == '') {
+    return null;
+  }
   let btntype = useRef();
-  const { tasks, addTask } = useStore((state) => ({
+
+  const { tasks, toggleComplete, delTask, updateTask } = useStore((state) => ({
     tasks: state.tasks,
-    addTask: state.addTask,
+    toggleComplete: state.toggleComplete,
+    delTask: state.delTask,
+    updateTask: state.updateTask,
   }));
 
-  const [taskInput, setTaskInput] = useState(task);
-  const [description, setDescription] = useState(des);
-  const [selected, setSelected] = useState(date);
+  const taskDetails = tasks.filter((item) => item.id == id)[0];
+  console.log(taskDetails.id);
+  const [taskInput, setTaskInput] = useState(taskDetails.task);
+  const [description, setDescription] = useState(taskDetails.description);
+  const [selected, setSelected] = useState(new Date(taskDetails.date));
 
   const getDate = (date) => {
     setSelected(date);
   };
+
   useEffect(() => {
     if (taskInput != '') {
       btntype.current.type = 'submit';
@@ -26,11 +34,11 @@ const EditTask = ({ task, des, date, hide }) => {
     }
   });
 
-  const handleAddTask = (e) => {
+  const handleUpdateTask = (e) => {
     if (btntype.current.type == 'submit') {
       e.preventDefault();
-      addTask({
-        id: uuidv4(),
+      updateTask({
+        id: id,
         task: taskInput,
         description: description,
         category: 'inbox',
@@ -39,10 +47,9 @@ const EditTask = ({ task, des, date, hide }) => {
       });
       setTaskInput('');
       setDescription('');
-      hide();
+      closeEdit();
     }
   };
-
   return (
     <div className={styles.navAddTask}>
       <div className={styles.inputSection}>
@@ -56,19 +63,29 @@ const EditTask = ({ task, des, date, hide }) => {
         />
         <input
           type="text"
-          placeholder="Description"
           value={description}
+          placeholder="Description"
           onChange={(e) => {
             setDescription(e.target.value);
           }}
         />
-        <Datepicker selectedDate={selected} getDate={getDate} />
+      </div>
+      <div>
+        <Datepicker
+          classname={styles.editDate}
+          selectedDate={selected}
+          getDate={getDate}
+        />
       </div>
       <div className={styles.btnSection}>
-        <button id={styles.taskSubmitBtn} ref={btntype} onClick={handleAddTask}>
+        <button
+          id={styles.taskSubmitBtn}
+          ref={btntype}
+          onClick={handleUpdateTask}
+        >
           Save
         </button>
-        <button id={styles.cancelAddTaskBtn} onClick={hide}>
+        <button id={styles.cancelAddTaskBtn} onClick={closeEdit}>
           Cancel
         </button>
       </div>

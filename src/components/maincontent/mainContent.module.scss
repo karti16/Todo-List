@@ -2,6 +2,7 @@ $currentColor: rgba(59, 57, 57, 0.802);
 
 .main {
   width: 100%;
+  padding: 30px;
 }
 
 .taskCheckbox {
@@ -67,18 +68,47 @@ $currentColor: rgba(59, 57, 57, 0.802);
 .taskCheckbox .task {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.826);
+  cursor: pointer;
+  &:hover {
+  }
 }
 
 .taskCheckbox .description {
-  font-size: 12px;
-  margin-top: 10px;
+  font-size: 14px;
   color: rgba(0, 0, 0, 0.475);
 }
 
 .editDel {
   display: flex;
+  opacity: 0;
   justify-content: space-evenly;
   color: rgba(63, 57, 57, 0.753);
-  font-size: 24px;
+  font-size: 28px;
   cursor: pointer;
+
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.editIcon,
+.delIcon {
+  padding: 4px;
+  border-radius: 4px;
+  &:hover {
+    background-color: rgba(186, 181, 181, 0.444);
+  }
+}
+
+.hideCurrentTask {
+  display: none;
+}
+
+.taskLi:not(:first-child) {
+  border-top: 1px solid rgba(164, 160, 160, 0.296);
+  margin-top: 20px;
+}
+
+.taskDes{
+  line-height: 1.4;
 }

@@ -52,6 +52,22 @@ const useStore = create(
             );
           })
         ),
+      updateTask: (data) =>
+        set(
+          produce((draftState) => {
+            const index = draftState.tasks.findIndex(
+              (item) => item.id == data.id
+            );
+
+            if (index >= 0) {
+              draftState.tasks[index].id = data.id;
+              draftState.tasks[index].task = data.task;
+              draftState.tasks[index].description = data.description;
+              draftState.tasks[index].complete = data.complete;
+              draftState.tasks[index].date = data.date;
+            }
+          })
+        ),
     }),
     {
       name: 'taskStorage',
