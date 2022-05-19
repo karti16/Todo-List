@@ -3175,15 +3175,12 @@ var App = function App() {
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_sidebar_sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
             path: "/inbox",
-            exact: true,
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_inbox_inbox__WEBPACK_IMPORTED_MODULE_0__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
             path: "/today",
-            exact: true,
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_today_today__WEBPACK_IMPORTED_MODULE_4__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
             path: "/upcoming",
-            exact: true,
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_upcoming_upcoming__WEBPACK_IMPORTED_MODULE_5__["default"], {})
           })]
         })]
@@ -4237,7 +4234,7 @@ var useStore = (0,zustand__WEBPACK_IMPORTED_MODULE_0__["default"])((0,zustand_mi
       description: '1 liter of milk',
       category: 'inbox',
       complete: true,
-      date: null
+      date: new Date()
     }],
     addTask: function addTask(data) {
       return set((0,immer__WEBPACK_IMPORTED_MODULE_3__["default"])(function (draftState) {
@@ -56450,4 +56447,4 @@ root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle03dc18bc2e89433ff3de.js.map
+//# sourceMappingURL=bundle28d9658240d8b49b4ce4.js.map
