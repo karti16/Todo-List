@@ -1,17 +1,31 @@
 $currentColor: rgba(59, 57, 57, 0.802);
 
-.main {
-  width: 100%;
-  padding: 30px;
+.taskLi {
+  padding: 10px 0px;
 }
+
+.taskLi:not(:first-child) {
+  // border-top: 1px solid rgba(164, 160, 160, 0.296);
+  border-top: 1px solid rgba(81, 80, 80, 0.126);
+  margin-top: 10px;
+}
+
+.taskLi:not(:last-child) {
+  margin-bottom: -10px;
+}
+
+.hideCurrentTask {
+  display: none;
+}
+// ////////////////////////////////////
 
 .taskCheckbox {
   font-family: system-ui, sans-serif;
-  font-size: 20px;
+  font-size: 16px;
   line-height: 1.1;
   display: grid;
   grid-template-columns: 1em auto 70px;
-  gap: 0.5em;
+  gap: 12px;
 }
 
 .taskCheckbox input[type='checkbox'] {
@@ -36,22 +50,9 @@ $currentColor: rgba(59, 57, 57, 0.802);
   width: 0.65em;
   height: 0.65em;
   display: none;
-  // transform: scale(0);
-  // transition: 120ms transform ease-in-out;
   box-shadow: inset 1em 1em rgb(82, 76, 76);
-  // transform-origin: bottom left;
-  // clip-path: polygon(14% 44%, 0 65%, 50% 100%, 100% 16%, 80% 0%, 43% 62%);
   clip-path: polygon(11% 51%, 40% 72%, 87% 18%, 94% 22%, 42% 83%, 6% 57%);
 }
-// .taskCheckbox input[type='checkbox']:hover::before {
-//   content: '';
-//   width: 0.65em;
-//   height: 0.65em;
-//   display: block;
-//   box-shadow: inset 1em 1em rgb(82, 76, 76);
-//   // transform-origin: bottom left;
-//   clip-path: polygon(11% 51%, 40% 72%, 87% 18%, 94% 22%, 42% 83%, 6% 57%);
-// }
 
 .taskCheckbox input[type='checkbox']:checked::before {
   display: block;
@@ -61,22 +62,23 @@ $currentColor: rgba(59, 57, 57, 0.802);
   background-color: rgba(70, 64, 64, 0.437);
 }
 
-.main li {
-  margin-top: 1em;
+// ////////////////////////////////////
+.taskDes {
+  line-height: 1.4;
 }
 
 .taskCheckbox .task {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.826);
   cursor: pointer;
-  &:hover {
-  }
 }
 
 .taskCheckbox .description {
   font-size: 14px;
   color: rgba(0, 0, 0, 0.475);
 }
+
+// ////////////////////////////////////
 
 .editDel {
   display: flex;
@@ -100,15 +102,4 @@ $currentColor: rgba(59, 57, 57, 0.802);
   }
 }
 
-.hideCurrentTask {
-  display: none;
-}
-
-.taskLi:not(:first-child) {
-  border-top: 1px solid rgba(164, 160, 160, 0.296);
-  margin-top: 20px;
-}
-
-.taskDes{
-  line-height: 1.4;
-}
+// ////////////////////////////////////

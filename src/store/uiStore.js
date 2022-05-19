@@ -9,6 +9,9 @@ const useStore = create(
       toggle: true,
       togSidebar: () => set((state) => ({ toggle: !state.toggle })),
 
+      isHome: false,
+      setIsHome: (value) => set((state) => ({ isHome: value })),
+
       tasks: [
         {
           id: uuidv4(),

@@ -9,8 +9,9 @@ $animation-duration: 200ms;
 }
 
 .open {
-  width: 300px;
+  width: 250px;
   transition: width $animation-duration ease-in-out;
+  flex-shrink: 0;
 }
 .sidebar ul {
   visibility: hidden;
@@ -38,6 +39,8 @@ $animation-duration: 200ms;
   justify-content: center;
   align-items: flex-end;
   color: rgba(63, 57, 57, 0.753);
+  cursor: pointer;
+  background: none;
 }
 
 .sidebar .date {
@@ -46,14 +49,25 @@ $animation-duration: 200ms;
   padding: 0;
   margin: 0;
   font-weight: 800;
+  background: none;
 }
 
-.sidebar li {
+.sidebar li a {
   text-transform: capitalize;
   display: flex;
-  gap: 10px;
+  padding: 8px 10px;
+  border-radius: 4px;
+  margin-right: 4px;
+
+  gap: 17px;
   &:nth-child(1n) {
-    margin-bottom: 36px;
   }
   color: rgb(59, 61, 60);
+
+  &:hover {
+    background-color: rgba(255, 255, 255, 0.69);
+  }
+}
+.selected {
+  background-color: rgba(255, 255, 255, 0.69);
 }

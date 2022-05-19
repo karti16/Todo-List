@@ -1,11 +1,15 @@
+$currentColor: rgba(59, 57, 57, 0.802);
+.allEditBox {
+  display: flex;
+  border: 1px solid rgba(0, 0, 0, 0.245);
+  border-radius: 14px;
+  margin: 30px 0px;
+}
 .navAddTask {
   display: flex;
   justify-content: center;
   align-content: space-between;
   flex-direction: column;
-  border: 1px solid rgba(0, 0, 0, 0.245);
-  margin: 30px 0px;
-  border-radius: 14px;
 }
 .navAddTask input:not(.editDate) {
   width: 100%;
@@ -60,4 +64,48 @@
   padding: 4px 6px;
   outline: none;
   text-align: center;
+  cursor: pointer;
+}
+
+.taskCheckbox {
+  font-family: system-ui, sans-serif;
+  font-size: 16px;
+  line-height: 1.1;
+  position: relative;
+  top: 25px;
+  left: 10px;
+}
+
+.taskCheckbox input[type='checkbox'] {
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  margin: 0;
+  font: inherit;
+  color: $currentColor;
+  width: 1.15em;
+  height: 1.15em;
+  border: 1px solid $currentColor;
+  border-radius: 1.15em;
+  transform: translateY(-0.075em);
+  display: grid;
+  place-content: center;
+  cursor: pointer;
+}
+
+.taskCheckbox input[type='checkbox']::before {
+  content: '';
+  width: 0.65em;
+  height: 0.65em;
+  display: none;
+  box-shadow: inset 1em 1em rgb(82, 76, 76);
+  clip-path: polygon(11% 51%, 40% 72%, 87% 18%, 94% 22%, 42% 83%, 6% 57%);
+}
+
+.taskCheckbox input[type='checkbox']:checked::before {
+  display: block;
+}
+
+.taskCheckbox input[type='checkbox']:checked {
+  background-color: rgba(70, 64, 64, 0.437);
 }

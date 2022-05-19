@@ -7,6 +7,7 @@ const EditTask = ({ closeEdit, id }) => {
   if (id == '') {
     return null;
   }
+
   let btntype = useRef();
 
   const { tasks, toggleComplete, delTask, updateTask } = useStore((state) => ({
@@ -17,13 +18,18 @@ const EditTask = ({ closeEdit, id }) => {
   }));
 
   const taskDetails = tasks.filter((item) => item.id == id)[0];
-  console.log(taskDetails.id);
   const [taskInput, setTaskInput] = useState(taskDetails.task);
   const [description, setDescription] = useState(taskDetails.description);
   const [selected, setSelected] = useState(new Date(taskDetails.date));
+  const [isComplete, setisComplete] = useState(taskDetails.complete);
 
   const getDate = (date) => {
     setSelected(date);
+  };
+
+  const modifyComplete = (e) => {
+    toggleComplete(id);
+    setisComplete(e.target.checked);
   };
 
   useEffect(() => {
@@ -32,7 +38,7 @@ const EditTask = ({ closeEdit, id }) => {
     } else {
       btntype.current.type = 'button';
     }
-  });
+  }, [tasks]);
 
   const handleUpdateTask = (e) => {
     if (btntype.current.type == 'submit') {
@@ -42,52 +48,65 @@ const EditTask = ({ closeEdit, id }) => {
         task: taskInput,
         description: description,
         category: 'inbox',
-        complete: false,
+        complete: isComplete,
         date: selected,
       });
       setTaskInput('');
       setDescription('');
       closeEdit();
+      setisComplete(false);
     }
   };
   return (
-    <div className={styles.navAddTask}>
-      <div className={styles.inputSection}>
+    <div className={`${styles.allEditBox}`}>
+      <div className={styles.taskCheckbox}>
         <input
-          type="text"
-          placeholder="Task name"
-          value={taskInput}
-          onChange={(e) => {
-            setTaskInput(e.target.value);
-          }}
-        />
-        <input
-          type="text"
-          value={description}
-          placeholder="Description"
-          onChange={(e) => {
-            setDescription(e.target.value);
-          }}
+          type="checkbox"
+          id={taskDetails.id}
+          name={taskDetails.id}
+          checked={isComplete}
+          onChange={modifyComplete}
         />
       </div>
-      <div>
-        <Datepicker
-          classname={styles.editDate}
-          selectedDate={selected}
-          getDate={getDate}
-        />
-      </div>
-      <div className={styles.btnSection}>
-        <button
-          id={styles.taskSubmitBtn}
-          ref={btntype}
-          onClick={handleUpdateTask}
-        >
-          Save
-        </button>
-        <button id={styles.cancelAddTaskBtn} onClick={closeEdit}>
-          Cancel
-        </button>
+      <div className={styles.navAddTask}>
+        <div className={styles.inputSection}>
+          <input
+            type="text"
+            placeholder="Task name"
+            value={taskInput}
+            onChange={(e) => {
+              setTaskInput(e.target.value);
+            }}
+          />
+          <input
+            type="text"
+            value={description}
+            placeholder="Description"
+            onChange={(e) => {
+              setDescription(e.target.value);
+            }}
+          />
+        </div>
+
+        <div>
+          <Datepicker
+            classname={styles.editDate}
+            selectedDate={selected}
+            getDate={getDate}
+          />
+        </div>
+        <div className={styles.btnSection}>
+          <button
+            id={styles.taskSubmitBtn}
+            ref={btntype}
+            onClick={handleUpdateTask}
+          >
+            Save
+          </button>
+          <button id={styles.cancelAddTaskBtn} onClick={closeEdit}>
+            Cancel
+          </button>
+        </div>
       </div>
     </div>
   );

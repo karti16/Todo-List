@@ -3,10 +3,12 @@ import SearchField from './searchField/searchField';
 import { useStore } from '../../store/uiStore';
 import styles from './navbar.module.scss';
 import AddTask from '../addtask/addTask';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 function Navbar() {
   const toggleFun = useStore((state) => state.togSidebar);
+  const setIsHome = useStore((state) => state.setIsHome);
 
   const [showAddTask, setshowAddTask] = useState(false);
 
@@ -15,12 +17,14 @@ function Navbar() {
       <nav>
         <ul>
           <li>
-            <FiMenu className={styles.navicons} onClick={toggleFun} />
+            <FiMenu className={styles.navicons} onClick={() => toggleFun()} />
           </li>
           <li>
-            <FiHome className={styles.navicons} />
+            <Link to="/inbox" onClick={() => setIsHome(true)}>
+              <FiHome className={styles.navicons} />
+            </Link>
           </li>
-          <li className="">
+          <li className={styles.seachField}>
             <SearchField />
           </li>
           <li className={styles.rightContent}>

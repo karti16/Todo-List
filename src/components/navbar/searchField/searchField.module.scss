@@ -1,33 +1,78 @@
-.s {
+.nav {
   display: flex;
   flex-direction: row;
   justify-items: center;
   align-items: center;
   border-radius: 6px;
   background-color: hsla(224, 34%, 85%, 0.941);
-
-  input {
-    background-color: transparent;
-
-    &::placeholder {
-      color: hsla(240, 2%, 16%, 0.418);
-    }
-
-    width: 220px;
-    outline: none;
-    transition: width 300ms ease-in-out;
-
-    &:focus {
-      width: 350px;
-      transition: width 300ms ease-in-out;
-    }
-  }
 }
 
-.d {
-  background-color: red;
+.searchBar {
+  background-color: transparent;
+
+  &::placeholder {
+    color: hsla(240, 2%, 16%, 0.418);
+  }
+
+  width: 220px;
+  outline: none;
+
+  &.stretch {
+    width: 350px;
+  }
 }
 
 .searchIcon {
   padding: 8px;
+}
+
+.searchResult {
+  display: block;
+  box-shadow: 0 15px 35px rgba(1, 1, 1, 0.418);
+  border-radius: 6px;
+  z-index: 11111;
+  background-color: hsl(224, 34%, 85%);
+  position: absolute;
+  top: 56px;
+  left: calc(48px + 0px + 12px + 12px + 48px);
+  width: 406px;
+  height: 300px;
+  overflow: hidden;
+  overflow-y: scroll;
+
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.searchList {
+  padding: 12px 18px;
+}
+
+.searchItem {
+  padding: 8px 0px;
+}
+
+.searchResult .task {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.826);
+  cursor: pointer;
+  &:hover {
+  }
+}
+
+.searchResult .description {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.475);
+}
+
+.closeIcon {
+  display: none;
+  font-size: 24px;
+  color: rgb(51 65 85);
+
+  cursor: pointer;
+  &.showCloseIcon {
+    display: block;
+  }
 }

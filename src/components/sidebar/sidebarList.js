@@ -1,12 +1,25 @@
 const sidebarList = [
-  { title: 'inbox', url: '#', iconName: 'FiInbox', iconSource: 'fi' },
+  {
+    title: 'inbox',
+    url: '#',
+    iconName: 'FiInbox',
+    iconSource: 'fi',
+    url: '/inbox',
+  },
   {
     title: 'today',
     url: '#',
     iconName: 'FiCalendar',
     iconSource: 'fi',
+    url: '/today',
   },
-  { title: 'upcoming', url: '#', iconName: 'BiCalendar', iconSource: 'bi' },
+  {
+    title: 'upcoming',
+    url: '#',
+    iconName: 'BiCalendar',
+    iconSource: 'bi',
+    url: '/upcoming',
+  },
 ];
 
 const date = new Date().getDate();

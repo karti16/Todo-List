@@ -1,0 +1,17 @@
+.main {
+  width: 100%;
+  padding: 30px;
+  flex-grow: 1;
+}
+
+.title_today {
+  font-size: 24px;
+  font-weight: bolder;
+  margin-bottom: 12px;
+
+  & > span {
+    color: rgb(110, 108, 108);
+    font-size: 13px;
+    font-weight: normal;
+  }
+}
