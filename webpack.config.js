@@ -14,15 +14,15 @@ module.exports = {
     bundle: path.resolve(__dirname, './src/index.jsx'),
   },
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: '[name][contenthash].js',
-    clean: true,
+    path: path.resolve(__dirname, ''),
+    filename: '[name].js',
+    clean: false,
     assetModuleFilename: '[name][ext]',
   },
   devtool: 'source-map',
   devServer: {
     watchFiles: [
-      path.resolve(__dirname, 'dist'),
+      path.resolve(__dirname, ''),
       path.resolve(__dirname, 'src/**/*'),
     ],
 
