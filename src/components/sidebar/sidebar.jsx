@@ -43,7 +43,7 @@ const Sidebar = () => {
             ref={inboxTab}
             onClick={handleClick}
             // className={`${item.title == 'inbox' ? styles.selected : ''} `}
-            to="/inbox"
+            to="/Todo-List/inbox"
           >
             <div className={styles.icon}>
               <div>
@@ -60,7 +60,7 @@ const Sidebar = () => {
             ref={inboxTab}
             onClick={handleClick}
             // className={`${item.title == 'inbox' ? styles.selected : ''} `}
-            to="/today"
+            to="/Todo-List/today"
           >
             <div className={styles.icon}>
               <div>
@@ -77,7 +77,7 @@ const Sidebar = () => {
             ref={inboxTab}
             onClick={handleClick}
             // className={`${item.title == 'inbox' ? styles.selected : ''} `}
-            to="/upcoming"
+            to="/Todo-List/upcoming"
           >
             <div className={styles.icon}>
               <div>
