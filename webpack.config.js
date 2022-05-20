@@ -8,7 +8,7 @@ const CopyPlugin = require('copy-webpack-plugin');
 //   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  mode: 'development',
+  mode: 'production',
 
   entry: {
     bundle: path.resolve(__dirname, './src/index.jsx'),
@@ -33,7 +33,7 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.mjs', '.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json'],
   },
   module: {
     rules: [
