@@ -41,6 +41,7 @@ const EditTask = ({ closeEdit, id }) => {
   }, [tasks]);
 
   const handleUpdateTask = (e) => {
+    console.log(selected);
     if (btntype.current.type == 'submit') {
       e.preventDefault();
       updateTask({

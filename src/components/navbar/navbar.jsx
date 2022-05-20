@@ -20,7 +20,7 @@ function Navbar() {
             <FiMenu className={styles.navicons} onClick={() => toggleFun()} />
           </li>
           <li>
-            <Link to="/inbox" onClick={() => setIsHome(true)}>
+            <Link to="/Todo-List/inbox" onClick={() => setIsHome(true)}>
               <FiHome className={styles.navicons} />
             </Link>
           </li>

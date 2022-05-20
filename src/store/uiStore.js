@@ -10,7 +10,7 @@ const useStore = create(
       togSidebar: () => set((state) => ({ toggle: !state.toggle })),
 
       isHome: false,
-      setIsHome: (value) => set((state) => ({ isHome: value })),
+      setIsHome: (value) => set(() => ({ isHome: value })),
 
       tasks: [
         {
@@ -19,7 +19,7 @@ const useStore = create(
           description: '1 liter of milk',
           category: 'inbox',
           complete: true,
-          date: null,
+          date: new Date().toISOString(),
         },
       ],
 

@@ -8,21 +8,26 @@ const CopyPlugin = require('copy-webpack-plugin');
 //   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
-  mode: 'production',
+  mode: 'development',
 
   entry: {
     bundle: path.resolve(__dirname, './src/index.jsx'),
   },
   output: {
-    path: path.resolve(__dirname, ''),
-    filename: '[name].js',
-    clean: false,
+    path: path.resolve(__dirname, 'dist'),
+    filename: '[name][contenthash].js',
+    clean: true,
     assetModuleFilename: '[name][ext]',
   },
-  devtool: 'source-map',
+
+  performance: {
+    hints: false,
+  },
+
+  devtool: 'inline-source-map',
   devServer: {
     watchFiles: [
-      path.resolve(__dirname, ''),
+      path.resolve(__dirname, 'dist'),
       path.resolve(__dirname, 'src/**/*'),
     ],
 
@@ -33,7 +38,7 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.mjs', '.js', '.jsx', '.json'],
   },
   module: {
     rules: [
