@@ -14,9 +14,10 @@ const App = () => {
         <div className={styles.app}>
           <Sidebar />
           <Routes>
-            <Route path="/Todo-List/inbox" exact element={<Inbox />} />
-            <Route path="/Todo-List/today" exact element={<Today />} />
-            <Route path="/Todo-List/upcoming" exact element={<Upcoming />} />
+            <Route path="/" exact element={<Inbox />} />
+            <Route path="/inbox" element={<Inbox />} />
+            <Route path="/today" element={<Today />} />
+            <Route path="/upcoming" element={<Upcoming />} />
           </Routes>
         </div>
       </div>
