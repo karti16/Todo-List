@@ -43,7 +43,7 @@ const Sidebar = () => {
             ref={inboxTab}
             onClick={handleClick}
             // className={`${item.title == 'inbox' ? styles.selected : ''} `}
-            to="/inbox"
+            to="/Todo-List/inbox"
           >
             <div className={styles.icon}>
               <div>
