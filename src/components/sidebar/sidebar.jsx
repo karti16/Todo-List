@@ -51,7 +51,7 @@ const Sidebar = () => {
               </div>
               <span className={styles.date}></span>
             </div>
-            inbox1
+            inbox2
           </Link>
         </li>
         <li key="today">
