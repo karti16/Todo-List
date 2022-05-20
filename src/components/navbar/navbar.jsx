@@ -3,7 +3,7 @@ import SearchField from './searchField/searchField';
 import { useStore } from '../../store/uiStore';
 import styles from './navbar.module.scss';
 import AddTask from '../addtask/addTask';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
 function Navbar() {

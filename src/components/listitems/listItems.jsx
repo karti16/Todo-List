@@ -3,7 +3,7 @@ import { useStore } from '../../store/uiStore';
 import { useEffect, useState } from 'react';
 import { FiTrash2, FiEdit3 } from 'react-icons/fi';
 import EditTask from '../edittask/editTask';
-import { format, parseISO } from 'date-fns';
+import { format } from 'date-fns';
 
 export default function ListItems({ data }) {
   const { toggleComplete, delTask } = useStore((state) => ({

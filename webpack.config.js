@@ -2,7 +2,7 @@ const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
-const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+// const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 // const BundleAnalyzerPlugin =
 //   require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
@@ -19,7 +19,10 @@ module.exports = {
     clean: true,
     assetModuleFilename: '[name][ext]',
   },
-  devtool: 'source-map',
+  performance: {
+    hints: false,
+  },
+  devtool: 'inline-source-map',
   devServer: {
     watchFiles: [
       path.resolve(__dirname, 'dist'),
@@ -33,7 +36,7 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.mjs', '.js', '.jsx', '.json'],
   },
   module: {
     rules: [

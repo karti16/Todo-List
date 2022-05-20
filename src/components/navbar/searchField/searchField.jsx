@@ -1,8 +1,7 @@
 import { FiSearch, FiX } from 'react-icons/fi';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import styles from './searchField.module.scss';
 import { useStore } from '../../../store/uiStore';
-import MainContent from '../../inbox/inbox';
 
 const SearchField = () => {
   const { tasks } = useStore((state) => ({

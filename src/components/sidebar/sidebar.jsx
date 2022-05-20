@@ -1,9 +1,9 @@
 import styles from './sidebar.module.scss';
 import { useStore } from '../../store/uiStore';
-import sidebarList from './sidebarList';
-import { FiMenu, FiHome } from 'react-icons/fi';
-import { useState, useEffect, useRef } from 'react';
+import { FiInbox, FiCalendar } from 'react-icons/fi';
+import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
+import { BiCalendar } from 'react-icons/bi';
 
 const Sidebar = () => {
   const toggle = useStore((state) => state.toggle);
@@ -37,44 +37,60 @@ const Sidebar = () => {
   return (
     <div className={`${styles.sidebar} ${toggle ? styles.open : ''}`}>
       <ul>
-        {sidebarList.map((item) => {
-          return (
-            <li key={item.title}>
-              <Link
-                id={item.title}
-                ref={inboxTab}
-                onClick={handleClick}
-                className={`${item.title == 'inbox' ? styles.selected : ''} `}
-                to={item.url}
-              >
-                {getIcons(item.iconName, item.iconSource, item.date)}
-                {item.title}
-              </Link>
-            </li>
-          );
-        })}
+        <li key="inbox">
+          <Link
+            id="inbox"
+            ref={inboxTab}
+            onClick={handleClick}
+            // className={`${item.title == 'inbox' ? styles.selected : ''} `}
+            to="/inbox"
+          >
+            <div className={styles.icon}>
+              <div>
+                <FiInbox />
+              </div>
+              <span className={styles.date}></span>
+            </div>
+            inbox
+          </Link>
+        </li>
+        <li key="today">
+          <Link
+            id="today"
+            ref={inboxTab}
+            onClick={handleClick}
+            // className={`${item.title == 'inbox' ? styles.selected : ''} `}
+            to="/today"
+          >
+            <div className={styles.icon}>
+              <div>
+                <FiCalendar />
+              </div>
+              <span className={styles.date}>{new Date().getDate()}</span>
+            </div>
+            today
+          </Link>
+        </li>
+        <li key="upcoming">
+          <Link
+            id="upcoming"
+            ref={inboxTab}
+            onClick={handleClick}
+            // className={`${item.title == 'inbox' ? styles.selected : ''} `}
+            to="/upcoming"
+          >
+            <div className={styles.icon}>
+              <div>
+                <BiCalendar />
+              </div>
+              <span className={styles.date}></span>
+            </div>
+            upcoming
+          </Link>
+        </li>
       </ul>
     </div>
   );
 };
-
-function getIcons(iconName, iconSource, date) {
-  const [icon, setIcon] = useState();
-  useEffect(() => {
-    if (iconSource == 'fi') {
-      import('react-icons/fi').then((icons) => setIcon(icons[iconName]));
-    }
-    if (iconSource == 'bi') {
-      import('react-icons/bi').then((icons) => setIcon(icons[iconName]));
-    }
-  }, []);
-
-  return (
-    <div className={styles.icon}>
-      <div>{icon}</div>
-      <span className={styles.date}>{date}</span>
-    </div>
-  );
-}
 
 export default Sidebar;
