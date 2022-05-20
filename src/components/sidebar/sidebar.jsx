@@ -43,7 +43,7 @@ const Sidebar = () => {
             ref={inboxTab}
             onClick={handleClick}
             // className={`${item.title == 'inbox' ? styles.selected : ''} `}
-            to="/Todo-List/inbox"
+            to="/inbox"
           >
             <div className={styles.icon}>
               <div>
@@ -51,7 +51,7 @@ const Sidebar = () => {
               </div>
               <span className={styles.date}></span>
             </div>
-            inbox2
+            inbox
           </Link>
         </li>
         <li key="today">

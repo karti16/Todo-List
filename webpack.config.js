@@ -14,18 +14,15 @@ module.exports = {
     bundle: path.resolve(__dirname, './src/index.jsx'),
   },
   output: {
-    path: path.resolve(__dirname, 'doc'),
+    path: path.resolve(__dirname, 'dist'),
     filename: '[name][contenthash].js',
     clean: true,
     assetModuleFilename: '[name][ext]',
   },
-  performance: {
-    hints: false,
-  },
   devtool: 'source-map',
   devServer: {
     watchFiles: [
-      path.resolve(__dirname, 'doc'),
+      path.resolve(__dirname, 'dist'),
       path.resolve(__dirname, 'src/**/*'),
     ],
 
@@ -36,7 +33,7 @@ module.exports = {
     historyApiFallback: true,
   },
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.mjs', '.js', '.jsx', '.json'],
   },
   module: {
     rules: [

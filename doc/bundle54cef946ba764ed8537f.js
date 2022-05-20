@@ -3174,11 +3174,7 @@ var App = function App() {
         className: _app_module_scss__WEBPACK_IMPORTED_MODULE_3__["default"].app,
         children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_sidebar_sidebar__WEBPACK_IMPORTED_MODULE_2__["default"], {}), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Routes, {
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
-            path: "/",
-            exact: true,
-            element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_inbox_inbox__WEBPACK_IMPORTED_MODULE_0__["default"], {})
-          }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
-            path: "/Todo-List/inbox",
+            path: "/inbox",
             element: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(_components_inbox_inbox__WEBPACK_IMPORTED_MODULE_0__["default"], {})
           }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_6__.jsx)(react_router_dom__WEBPACK_IMPORTED_MODULE_8__.Route, {
             path: "/today",
@@ -3959,7 +3955,7 @@ var Sidebar = function Sidebar() {
           ref: inboxTab,
           onClick: handleClick // className={`${item.title == 'inbox' ? styles.selected : ''} `}
           ,
-          to: "/Todo-List/inbox",
+          to: "/inbox",
           children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)("div", {
             className: _sidebar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].icon,
             children: [/*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("div", {
@@ -3967,7 +3963,7 @@ var Sidebar = function Sidebar() {
             }), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("span", {
               className: _sidebar_module_scss__WEBPACK_IMPORTED_MODULE_0__["default"].date
             })]
-          }), "inbox2"]
+          }), "inbox"]
         })
       }, "inbox"), /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)("li", {
         children: /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsxs)(react_router_dom__WEBPACK_IMPORTED_MODULE_4__.Link, {
@@ -59168,4 +59164,4 @@ root.render( /*#__PURE__*/(0,react_jsx_runtime__WEBPACK_IMPORTED_MODULE_3__.jsx)
 
 /******/ })()
 ;
-//# sourceMappingURL=bundle6ccb13f8c619003a5746.js.map
+//# sourceMappingURL=bundle54cef946ba764ed8537f.js.map
